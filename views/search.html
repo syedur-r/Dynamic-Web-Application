@@ -1,0 +1,20 @@
+<!doctype html> 
+	<head>     
+		<title>Search</title>   
+	</head>   
+	<h1 style="font-family:sans-serif;font-size:50px;"> This is the Mongo Search page </h1>   
+	<body>     
+		<p style="font-family:sans-serif;font-size:35px;">This page allows you to search a book in the database</p>
+		<form action="/search-result" method="GET">     
+			<label style="font-family:sans-serif;font-size:12px;" for="search-box"><strong>Enter a book: </strong></label>
+			<input style="font-family:sans-serif;font-size:12px;" id="search-box" type="text" name="keyword" placeholder="Enter a book" required>     
+			<input style="font-family:sans-serif;font-size:12px;" type="submit" value="Search" >   
+		</form>
+		<button type="button" onclick="darkMode()">Dark Mode</button>
+		<button type="button" onclick="lightMode()">Light Mode</button>
+
+		<script> function darkMode() { document.body.style.backgroundColor = "black"; document.body.style.color = "white"; nav.style.color = "white"; } function lightMode() { document.body.style.backgroundColor = "white"; document.body.style.color = "black"; nav.style.color = "blue"; } </script>	  
+		
+	</body>
+	<br/><br/><a style="font-family:sans-serif;font-size:15px;" id="nav" href='./'>Home</a> 
+</html>

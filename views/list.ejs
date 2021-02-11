@@ -1,0 +1,20 @@
+<!doctype html> 
+	<head>     
+		<title>Book List</title>   
+	</head>     
+	<h1 style="font-family:sans-serif;font-size:50px;"> This is the Book List Page </h1>           
+	<body>             
+		<h3 style="font-family:sans-serif;font-size:25px;">You can see names and prices of all available books at our book shop here:</h3>             
+		<ul>               
+			<% availablebooks.forEach(function(book){ %>               
+			<li style="font-family:sans-serif;font-size:20px;"><%= book.name %>, £<%= book.price %></li>              
+			<% }) %>             
+		</ul>
+		<button type="button" onclick="darkMode()">Dark Mode</button>
+		<button type="button" onclick="lightMode()">Light Mode</button>
+		
+		<script> function darkMode() { document.body.style.backgroundColor = "black"; document.body.style.color = "white"; nav.style.color = "white"; } function lightMode() { document.body.style.backgroundColor = "white"; document.body.style.color = "black"; nav.style.color = "blue"; } </script>                          
+			
+	</body>
+	<br/><br/><a style="font-family:sans-serif;font-size:15px;" id="nav" href='./'>Home</a><br/><br/> 
+</html>

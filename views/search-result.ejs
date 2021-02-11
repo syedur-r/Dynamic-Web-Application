@@ -1,0 +1,23 @@
+<!doctype html>         
+	<head>                              
+		<title>Search-Results</title>                    
+	</head>                 
+	<h1 style="font-family:sans-serif;font-size:50px;"> This is the Mongo Search-Result Page </h1>                 
+	<body>                         
+		<h3 style="font-family:sans-serif;font-size:25px;">Here are the results we found for your search query: "<%= searchRecord %>"<br></h3> 
+		<h4 style="font-family:sans-serif;font-size:20px;"><%= searchCount %> <%= strresult %> found</h4>                      
+		<ul>                                 
+			<% searchedBooks.forEach(function(book){ %>                                
+				<% let bold=book.name.replace(searchRecord, "<strong>"+searchRecord+"</strong>") %>
+				<li style="font-family:sans-serif;font-size:20px;"><%-bold %>, £<%= book.price %></li>        
+			<% }) %>                         
+		</ul>
+		<button type="button" onclick="darkMode()">Dark Mode</button>
+		<button type="button" onclick="lightMode()">Light Mode</button>                                                               
+		
+		<script> function darkMode() {document.body.style.backgroundColor = "black";document.body.style.color = "white"; var elements = document.querySelectorAll("#nav"); for(var i = 0; i < elements.length; i++) elements[i].style.color = 'white';} function lightMode() {document.body.style.backgroundColor = "white";document.body.style.color = "black"; var elements =  document.querySelectorAll("#nav"); for(var i = 0; i  < elements.length; i++) elements[i].style.color = 'blue';} </script>                          
+			
+	</body>
+	<br/><br/><a style="font-family:sans-serif;font-size:15px;" id="nav" href='./search'>Search</a>
+	<br/><br/><a style="font-family:sans-serif;font-size:15px;" id="nav" href='./'>Home</a><br/><br/> 
+</html>
